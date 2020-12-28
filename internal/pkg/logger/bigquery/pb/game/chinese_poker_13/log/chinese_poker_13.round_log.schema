@@ -1,0 +1,630 @@
+[
+ {
+  "name": "game_type",
+  "type": "INTEGER",
+  "mode": "REQUIRED"
+ },
+ {
+  "name": "game_id",
+  "type": "STRING",
+  "mode": "REQUIRED"
+ },
+ {
+  "name": "round_id",
+  "type": "STRING",
+  "mode": "REQUIRED"
+ },
+ {
+  "name": "round_data",
+  "type": "STRING",
+  "mode": "REQUIRED"
+ },
+ {
+  "name": "room",
+  "type": "RECORD",
+  "mode": "REQUIRED",
+  "fields": [
+   {
+    "name": "id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "credit_to_enter",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "credit_to_bet",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "credit_to_lock",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "sort",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "status",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "max_player",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "min_player",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "max_round",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "percentage_win_to_system_fee",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "percentage_system_fee_to_jackpot",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "percentage_win_jackpot",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "player_total_settle_credit_map_by_id",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+     {
+      "name": "key",
+      "type": "STRING",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "value",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     }
+    ]
+   },
+   {
+    "name": "tournament_bet_rule_level",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+     {
+      "name": "sn",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "rule_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "level",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "score_to_bet",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "minute_since_begin",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "can_buy_score",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "can_register",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "tournament",
+  "type": "RECORD",
+  "mode": "REQUIRED",
+  "fields": [
+   {
+    "name": "sn",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "status",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "credit_to_register",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "score_to_enter",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "multiple_to_eliminate",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "bet_rule",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "prize_rule",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "min_player",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "max_player",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "percentage_system_fee",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "remarks",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "register_time",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "begin_time",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "end_time",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "bet_rule_level_map_by_level",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+     {
+      "name": "key",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "value",
+      "type": "RECORD",
+      "mode": "NULLABLE",
+      "fields": [
+       {
+        "name": "sn",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "rule_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "level",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "score_to_bet",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "minute_since_begin",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "can_buy_score",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "can_register",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "prize_rule_percentage_map_by_place",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+     {
+      "name": "key",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "value",
+      "type": "RECORD",
+      "mode": "NULLABLE",
+      "fields": [
+       {
+        "name": "sn",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "rule_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "place",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "percentage",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "state",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "current_bet_rule_level",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+     {
+      "name": "sn",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "rule_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "level",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "score_to_bet",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "minute_since_begin",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "can_buy_score",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "can_register",
+      "type": "BOOLEAN",
+      "mode": "NULLABLE"
+     }
+    ]
+   },
+   {
+    "name": "MinuteRegular",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "MinuteFinal",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "room",
+    "type": "RECORD",
+    "mode": "NULLABLE",
+    "fields": [
+     {
+      "name": "id",
+      "type": "STRING",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "credit_to_enter",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "credit_to_bet",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "credit_to_lock",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "sort",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "status",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "max_player",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "min_player",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "max_round",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "percentage_win_to_system_fee",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "percentage_system_fee_to_jackpot",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "percentage_win_jackpot",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "player_total_settle_credit_map_by_id",
+      "type": "RECORD",
+      "mode": "REPEATED",
+      "fields": [
+       {
+        "name": "key",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "value",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       }
+      ]
+     },
+     {
+      "name": "tournament_bet_rule_level",
+      "type": "RECORD",
+      "mode": "NULLABLE",
+      "fields": [
+       {
+        "name": "sn",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "rule_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "level",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "score_to_bet",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "minute_since_begin",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "can_buy_score",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "can_register",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "total_registered_player",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "total_player_buy_score_times",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "can_register",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "can_buy_score",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "player_map_by_place",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+     {
+      "name": "key",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+     },
+     {
+      "name": "value",
+      "type": "RECORD",
+      "mode": "NULLABLE",
+      "fields": [
+       {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "sn",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "display_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "platform",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "credit",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "balance",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "currency_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "picture",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "access_token",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "score",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+       },
+       {
+        "name": "icon",
+        "type": "STRING",
+        "mode": "NULLABLE"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "created_time",
+  "type": "INTEGER",
+  "mode": "REQUIRED"
+ }
+]

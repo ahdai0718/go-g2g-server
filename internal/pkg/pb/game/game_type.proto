@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb.game;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb/game";
+
+enum GameType {
+  GT_NONE = 0;
+
+  GT_UNIVERSAL = 1;
+}
+
+enum GameTypeForPayment { GTFP_NONE = 0; }

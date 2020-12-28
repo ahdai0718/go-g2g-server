@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+message Announcement {
+  string title = 1;
+  int32 status = 2;
+  string content = 3;
+  int64 created_at = 4;
+  int32 marquee_status = 5;
+  int32 marquee_times = 6;
+  int32 marquee_cycle = 7;
+  int32 marquee_interval = 8;
+  int64 marquee_show_time = 9;
+}

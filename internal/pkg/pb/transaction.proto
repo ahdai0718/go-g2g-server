@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+import "platform.proto";
+
+enum PlayerTransactionStatus {
+  NONE = 0; LOCK = 1; BET = 2; SETTLE = 3; UNLOCK = 4; CANCEL = 5;
+}
+
+enum TransactionType {
+  TT_NONE = 0;
+
+  TT_LOCK = 1;
+  TT_CANCEL = 2;
+  TT_BET = 3;
+  TT_CANCEL_BET = 4;
+  TT_SETTLE = 5;
+  TT_UNLOCK = 6;
+}
+
+message Transaction {
+  string player_id = 1;
+  double amount = 2;
+  int64 credit = 3;
+  int64 jackpot = 4;
+  double currency = 5;
+  string currency_code = 6;
+  string game_type = 7;
+  string game_id = 8;
+  string round_id = 9;
+  int64 timestamp = 10;
+  string transaction_id = 11;
+  string transaction_id_lock = 12;
+  string transaction_id_bet = 13;
+  string transaction_id_cancel_bet = 14;
+  repeated string transaction_id_bet_list = 15;
+  string transaction_id_settle = 16;
+  string transaction_id_unlock = 17;
+  string transaction_id_cancel = 18;
+  repeated int64 extra_int = 19;
+  repeated double extra_float = 20;
+  repeated string extra_string = 21;
+  int64 credit_lock = 22;
+  int64 system_fee = 23;
+  int64 system_fee_jackpot = 24;
+  int32 percentage_win_to_system_fee = 25;
+  int32 percentage_system_fee_to_jackpot = 26;
+  int32 percentage_win_jackpot = 27;
+  bool success = 28;
+  PlatformPlayer platform_player = 29;
+  TransactionType type = 30;
+}

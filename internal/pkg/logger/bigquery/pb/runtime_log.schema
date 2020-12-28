@@ -1,0 +1,44 @@
+[
+ {
+  "name": "type",
+  "type": "INTEGER",
+  "mode": "NULLABLE"
+ },
+ {
+  "name": "file",
+  "type": "STRING",
+  "mode": "NULLABLE"
+ },
+ {
+  "name": "line",
+  "type": "INTEGER",
+  "mode": "NULLABLE"
+ },
+ {
+  "name": "message",
+  "type": "STRING",
+  "mode": "NULLABLE"
+ },
+ {
+  "name": "time",
+  "type": "INTEGER",
+  "mode": "NULLABLE"
+ },
+ {
+  "name": "server_info",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "fields": [
+   {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "group",
+    "type": "STRING",
+    "mode": "NULLABLE"
+   }
+  ]
+ }
+]

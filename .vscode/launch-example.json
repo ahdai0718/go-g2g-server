@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "compounds": [
+    {
+        "name": "Gateway+Game",
+        "configurations": []
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Gateway001",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "output": "__debug_bin_gateway001",
+      "program": "${workspaceFolder}/cmd/server/gateway/main.go",
+      "args": [
+        "--logtostderr", "true",
+        "--stderrthreshold", "INFO",
+        "--color", "true",
+        "--server-name", "Gateway001",
+        "--server-host", "0.0.0.0",
+        "--server-port", "3000",
+        "--run-mode", "dev",
+        "--ip-address", "0.0.0.0",
+        "--gin-mode", "debug",
+        "--db-host", "",
+        "--db-port", "3306",
+        "--db-schema", "dev_g2g_server_base",
+        "--db-user", "dev_g2gserverbase",
+        "--db-password", "!QAZ2wsx",
+        "--db-max-connection", "32",
+        "--use-database-server-info", "true"
+      ]
+    },
+    {
+      "name": "GameExample",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "output": "__debug_bin_game_example",
+      "program": "${workspaceFolder}/cmd/server/game/main.go",
+      "args": [
+        "--logtostderr", "true",
+        "--stderrthreshold", "INFO",
+        "--color", "true",
+        "--server-name", "GameExample",
+        "--server-host", "0.0.0.0",
+        "--server-port", "3001",
+        "--server-ws-protocol", "ws",
+        "--server-ws-route-path", "ws",
+        "--server-host-for-client", "0.0.0.0",
+        "--server-port-for-client", "3001",
+        "--server-ws-protocol-for-client", "ws",
+        "--server-ws-route-path-for-client", "ws",
+        "--run-mode", "dev",
+        "--gin-mode", "debug",
+        "--ip-address", "0.0.0.0",
+        "--db-host", "",
+        "--db-port", "3306",
+        "--db-schema", "dev_g2g_server_base",
+        "--db-schema-game", "dev_g2g_game_example",
+        "--db-user", "dev_g2gserverbase",
+        "--db-password", "!QAZ2wsx",
+        "--db-max-connection", "32",
+        "--use-database-server-info", "false"
+      ]
+    },
+    {
+      "name": "Bot",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "output": "__debug_bin_bot",
+      "program": "${workspaceFolder}/cmd/bot/main.go",
+      "args": [
+        "--logtostderr", "true",
+        "--stderrthreshold", "INFO",
+        "--color", "true",
+        "--server-host-for-client", "0.0.0.0",
+        "--server-port-for-client", "3000",
+        "--server-ws-protocol-for-client", "ws",
+        "--server-ws-route-path-for-client", "ws",
+        "--max-bot", "1",
+      ]
+    }
+  ]
+}

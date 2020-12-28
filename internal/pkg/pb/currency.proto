@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+message Currency {
+  string name = 1;
+  double multiply_to_credit = 2;
+}
+
+message CurrencyMap { map<string, Currency> data = 1; }
