@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+import "error.proto";
+
+enum RequestCommand {
+  RC_NONE = 0;
+
+  RC_ERROR = 1;
+
+  RC_SERVER_INFO = 101;
+  RC_SERVER_INFO_MAP_BY_NAME = 102;
+  RC_SERVER_BROADCAST_GATEWAY = 103;
+  RC_SERVER_BROADCAST_GAME = 104;
+
+  RC_PLAYER_INFO = 301;
+}
+
+message Request {
+  int32 command = 1;
+  bytes data = 2;
+  int64 timestamp = 3;
+  Error error = 4;
+}
+
+message RequestData {
+  int64 int_value = 1;
+  string string_value = 2;
+  double float_value = 3;
+}

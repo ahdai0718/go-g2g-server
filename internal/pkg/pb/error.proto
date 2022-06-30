@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+enum ErrorCode {
+  EC_NONE = 0;
+
+  EC_SERVER_INTERNAL = 1;
+
+  EC_LOGIN_FAILED = 101;
+  EC_LOGIN_UNDER_MAINTAIN = 102;
+
+  EC_PLAYER_LOCK_TRANSACTION_FAILED = 201;
+  EC_PLAYER_PLACE_BET_FAILED = 202;
+  EC_PLAYER_CANCEL_BET_FAILED = 203;
+  EC_PLAYER_SETTLE_BET_FAILED = 204;
+  EC_PLAYER_UNLOCK_TRANSACTION_FAILED = 205;
+  EC_PLAYER_CANCEL_LOCK_TRANSACTION_FAILED = 206;
+  EC_PLAYER_TRANSACTION_STATUS_LOCK = 207;
+}
+
+enum ErrorAction { EA_NONE = 0; EA_CLOSE_CONNECTION = 1; }
+
+message Error {
+  int32 code = 1;
+  string message = 2;
+  int64 timestamp = 3;
+  ErrorAction action = 4;
+}

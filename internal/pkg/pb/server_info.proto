@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+import "gen_bq_schema/bq_field.proto";
+import "game/game_type.proto";
+
+enum ServerType {
+  ST_NONE = 0;
+  ST_GATEWAY = 1;
+  ST_GAME = 2;
+  ST_FLUENTD = 3;
+}
+
+message ServerInfo {
+  string id = 1 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  ServerType type = 2 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  string host = 3 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  int32 port = 4 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  string protocol = 5 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  game.GameType game_type = 6 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  string name = 7;
+  string group = 8;
+  bool is_offline = 9 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  int64 last_request_time = 10 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  int64 concurrent_player = 11 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  int64 concurrent_game = 12 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  string public_ip_address = 13 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  string websocket_protocol = 14 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+  string websocket_route_path = 15 [ (gen_bq_schema.bigquery) = {ignore : true} ];
+}
+
+message ServerInfoList { repeated ServerInfo Data = 1; }
+
+message ServerInfoMapByName { map<string, ServerInfo> Data = 1; }
+
+message ServerInfoMapByType { map<int64, ServerInfoMapByName> Data = 1; }
+
+message ServerInfoListMapByType { map<int64, ServerInfoList> Data = 1; }

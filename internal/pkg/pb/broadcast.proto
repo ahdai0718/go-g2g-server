@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+import "game/game_type.proto";
+import "request.proto";
+
+message Broadcast {
+  game.GameType game_type = 1;
+  Request request = 2;
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+env GOOS=linux GOARCH=amd64 go build -o gameserveramd64
+#env GOOS=windows GOARCH=amd64 go build -o gameserverwindowsamd64

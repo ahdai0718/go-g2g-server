@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "ohdada/g2gserver/internal/pkg/pb";
+
+import "auth.proto";
+
+message PlatformPlayer {
+  string id = 1;
+  int64 sn = 2;
+  string name = 3;
+  string language = 4;
+  int64 credit = 5;
+  int64 lock_credit = 6;
+  double balance = 7;
+  double lock_balance = 8;
+  string id_at_platform = 9;
+  string access_token = 10;
+  string display_name = 11;
+  string platform = 12;
+  string icon = 13;
+}
+
+message PlatformProvider {
+  string factory_name = 1;
+  string name = 2;
+  string aes_key = 3;
+  string aes_iv = 4;
+  string api_url_base = 5;
+  string public_ip_address = 6;
+  string run_mode = 7;
+  Auth auth = 8;
+}
+
+message PlatformProviderAPIPath {
+  string oauth_access_token = 1;
+  string player_token_validate = 2;
+  string player_balance = 3;
+  string player_bet_place = 4;
+  string player_bet_cancel = 5;
+  string player_bet_settle = 6;
+  string player_transaction_lock = 7;
+  string player_transaction_unlock = 8;
+  string player_transaction_cancel = 9;
+  string player_transaction_status = 10;
+}
